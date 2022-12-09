@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Bread</string>
+    <string name="helper_back">Go Back</string>
+    <string name="helper_base_weight">0 grams</string>
+
+<!--    Ingredients -->
+    <string name="ig_bread_flour">Bread Flour</string>
+    <string name="ig_wheat_flour">Wheat Flour</string>
+    <string name="ig_salt">Salt</string>
+    <string name="ig_yeast">Yeast</string>
+    <string name="ig_water">Water</string>
+<!--  Bowl Content Window -->
+    <string name="bowlTV_title">Bowl Contents</string>
+    <string name="BC_bread_flour">Bread Flour</string>
+    <string name="bowl_mix_button">Mix Ingredients</string>
+</resources>
