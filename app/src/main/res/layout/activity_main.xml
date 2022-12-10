@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen"
+    android:background="#C49A6C"
     tools:context=".MainActivity">
 
     <ImageButton
@@ -23,31 +24,47 @@
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="76dp"
-        android:layout_height="90dp"
+        android:id="@+id/RecipeBookButton"
+        android:layout_width="86dp"
+        android:layout_height="103dp"
         android:backgroundTint="#C49A6C"
         android:contentDescription="Recipe Book"
         android:scaleType="fitCenter"
         android:tint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintEnd_toStartOf="@+id/MixingBowlButton"
+        app:layout_constraintHorizontal_bias="0.275"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975"
+        app:layout_constraintVertical_bias="0.976"
         app:srcCompat="@drawable/ic_recipe_book" />
 
+    <ImageButton
+        android:id="@+id/MixingBowlButton"
+        android:layout_width="122dp"
+        android:layout_height="102dp"
+        android:backgroundTint="#C49A6C"
+        android:contentDescription="Mixing Bowl"
+        android:scaleType="fitCenter"
+        android:tint="#A5A4A4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.974"
+        app:srcCompat="@drawable/ic_bowl" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/frameLayout"
+        android:id="@+id/BowlContentLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="invisible">
 
         <View
             android:id="@+id/bowlContent"
@@ -56,9 +73,10 @@
             android:background="#997755"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/bowlTitle"
