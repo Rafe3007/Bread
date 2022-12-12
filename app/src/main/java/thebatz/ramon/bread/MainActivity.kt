@@ -19,13 +19,15 @@ class MainActivity : AppCompatActivity() {
 
         // Layouts
         val bowlContentView = findViewById<ConstraintLayout>(R.id.BowlContentLayout)
+        bowlContentView.visibility = GONE
+
         val BC_BackButton = findViewById<Button>(R.id.BowlContentBackButton)
 
         mixingBowlButton.setOnClickListener {
             bowlContentView.visibility = VISIBLE
         }
         BC_BackButton.setOnClickListener {
-            bowlContentView.visibility = INVISIBLE
+            bowlContentView.visibility = GONE
         }
     }
 }
