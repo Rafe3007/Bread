@@ -2,6 +2,7 @@
     <string name="app_name">Bread</string>
     <string name="helper_back">Go Back</string>
     <string name="helper_base_weight">0 grams</string>
+    <string name="helper_ingredient">Ingredient : 0 grams</string>
 
 <!--    Ingredients -->
     <string name="ig_bread_flour">Bread Flour</string>

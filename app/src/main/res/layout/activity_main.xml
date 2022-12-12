@@ -217,7 +217,7 @@
             app:layout_constraintVertical_bias="0.122" />
 
         <LinearLayout
-            android:id="@+id/recipeWhiteLayout"
+            android:id="@+id/WhiteLayout"
             android:layout_width="321dp"
             android:layout_height="122dp"
             android:orientation="horizontal"
@@ -237,19 +237,20 @@
                 app:srcCompat="@drawable/ic_bread_loaf" />
 
             <LinearLayout
+                android:id="@+id/recipeWhiteLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingLeft="8dp">
+                android:paddingLeft="16dp">
 
                 <TextView
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="casual"
-                    android:text="TextView"
-                    android:textSize="16sp"
+                    android:text="@string/helper_ingredient"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -257,8 +258,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="casual"
-                    android:text="TextView"
-                    android:textSize="16sp"
+                    android:text="@string/helper_ingredient"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -266,8 +267,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="casual"
-                    android:text="TextView"
-                    android:textSize="16sp"
+                    android:text="@string/helper_ingredient"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -275,23 +276,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="casual"
-                    android:text="TextView"
-                    android:textSize="16sp"
+                    android:text="@string/helper_ingredient"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="casual"
-                    android:text="TextView"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/recipeWheatLayout"
+            android:id="@+id/WheatLayout"
             android:layout_width="322dp"
             android:layout_height="123dp"
             android:clipChildren="false"
@@ -301,7 +294,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipeWhiteLayout"
+            app:layout_constraintTop_toBottomOf="@+id/WhiteLayout"
             app:layout_constraintVertical_bias="0.325">
 
             <ImageView
@@ -313,19 +306,20 @@
                 app:srcCompat="@drawable/ic_whole_loaf" />
 
             <LinearLayout
+                android:id="@+id/recipeWheatLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="vertical"
-                android:paddingLeft="8dp">
+                android:paddingLeft="16dp">
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="casual"
-                    android:text="TextView"
-                    android:textSize="16dp"
+                    android:text="@string/helper_ingredient"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -333,8 +327,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="casual"
-                    android:text="TextView"
-                    android:textSize="16dp"
+                    android:text="@string/helper_ingredient"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -342,8 +336,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="casual"
-                    android:text="TextView"
-                    android:textSize="16dp"
+                    android:text="@string/helper_ingredient"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -351,18 +345,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="casual"
-                    android:text="TextView"
-                    android:textSize="16dp"
+                    android:text="@string/helper_ingredient"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="casual"
-                    android:text="TextView"
-                    android:textSize="16dp"
-                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
 
@@ -374,7 +360,7 @@
             android:text="@string/white_loaf"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/recipeWhiteLayout"
+            app:layout_constraintBottom_toTopOf="@+id/WhiteLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.207"
             app:layout_constraintStart_toStartOf="parent"
@@ -389,11 +375,11 @@
             android:text="@string/wheat_loaf"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/recipeWheatLayout"
+            app:layout_constraintBottom_toTopOf="@+id/WheatLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.211"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recipeWhiteLayout"
+            app:layout_constraintTop_toBottomOf="@+id/WhiteLayout"
             app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
