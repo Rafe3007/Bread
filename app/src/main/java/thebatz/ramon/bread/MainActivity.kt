@@ -3,6 +3,7 @@ package thebatz.ramon.bread
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View.*
 import android.widget.Button
 import android.widget.ImageButton
@@ -10,6 +11,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.get
+import androidx.core.view.isVisible
+import org.w3c.dom.Text
 import thebatz.ramon.bread.Entity.Bowl
 import thebatz.ramon.bread.Entity.BreadType
 import thebatz.ramon.bread.Entity.Ingredient
@@ -143,28 +146,57 @@ class MainActivity : AppCompatActivity() {
         }
 
     //-----======[Game Logic]======-----
+        // TODO: Move Game logic to it's own class
         // Plan to randomize and add higher quantities of breads to make
-        // For now, game is testing if one of the two breads are made
+        // For now, game is testing if only one of the two breads are made
         // if bread is made -> Game Over
-
-        var gameEnd = false
 
         // Needed Game Views
         val gameText = findViewById<TextView>(R.id.gameText)
+        val updateUserText = findViewById<TextView>(R.id.updateUserText)
         val mixingButton = findViewById<Button>(R.id.mixIngredientButton)
 
+        var gameEnd = false
         val randBread = (1..2).random()
+        val breadObjective:BreadType
         if(randBread == 1) {
-            val breadObjective:BreadType = whiteLoaf
+            breadObjective = whiteLoaf
             gameText.text = "Make a ${whiteLoaf.name}"
         }
-        else if (randBread == 2) {
-            val breadObjective:BreadType = wheatLoaf
+        else { // else ifs for more loafs
+            breadObjective = wheatLoaf
             gameText.text = "Make a ${wheatLoaf.name}"
         }
 
+        fun checkGameEnd() {
+            if(gameEnd) {
+                updateUserText.text = "Yummy!!!"
+            } else {
+                updateUserText.text = "EW! This is NOT bread..."
+            }
+        }
+
         mixingButton.setOnClickListener {
-            // TODO 
+            if(bowlContentView.isVisible) {
+                bowlContentView.visibility = GONE
+            }
+            if(recipeBook.isVisible) {
+                recipeBook.visibility = GONE
+            }
+
+            val bowlData = bowl.getBowlData()
+            if(bowlData.size == breadObjective.breadData.size) {
+                for(entry in breadObjective.breadData) {
+                    val bowlWeight = bowlData[entry.key]
+                    if(entry.value != bowlWeight) {
+                        gameEnd = false
+                        break
+                    }
+                    gameEnd = true
+                }
+            }
+
+            checkGameEnd()
         }
 
     }
