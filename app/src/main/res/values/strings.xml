@@ -2,6 +2,8 @@
     <string name="app_name">Bread</string>
     <string name="helper_back">Go Back</string>
     <string name="helper_base_weight">0 grams</string>
+    <string name="helper_ingredient">Ingredient : 0 grams</string>
+    <string name="reset_bowl">Reset Bowl</string>
 
 <!--    Ingredients -->
     <string name="ig_bread_flour">Bread Flour</string>
@@ -13,4 +15,7 @@
     <string name="bowlTV_title">Bowl Contents</string>
     <string name="BC_bread_flour">Bread Flour</string>
     <string name="bowl_mix_button">Mix Ingredients</string>
+
+    <string name="white_loaf">White Loaf</string>
+    <string name="wheat_loaf">Wheat Loaf</string>
 </resources>
