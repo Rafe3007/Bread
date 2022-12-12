@@ -53,8 +53,19 @@ class MainActivity : AppCompatActivity() {
                 val txt = bowl.getWeightString(bowl.allowedIngredients[i])
                 tv.text = txt
             }
+
+            val totalScale = findViewById<TextView>(R.id.scaleText)
+            totalScale.text = "${bowl.totalWeight} grams"
         }
         updateScale() // Initial update
+
+        val mixIngredientButton = findViewById<Button>(R.id.mixIngredientButton) // TODO check if bread is good
+
+        val resetBowlButton = findViewById<Button>(R.id.resetBowlButton)
+        resetBowlButton.setOnClickListener {
+            bowl.resetBowl()
+            updateScale()
+        }
 
         // Recipe book
         val recipeBackButton = findViewById<Button>(R.id.recipeBackButton)
@@ -106,7 +117,33 @@ class MainActivity : AppCompatActivity() {
             tv.text = "${wheatLoaf.weights[i].toString()} g of ${wheatLoaf.ingredients[i].displayName}"
         }
 
-        
+        // Buttons
+        val breadFlourButton = findViewById<ImageButton>(R.id.imgButtonBreadFlour)
+        val wheatFlourButton = findViewById<ImageButton>(R.id.imgButtonWheatFlour)
+        val yeastButton = findViewById<ImageButton>(R.id.imgButtonYeast)
+        val waterButton = findViewById<ImageButton>(R.id.imgButtonWater)
+        val saltButton = findViewById<ImageButton>(R.id.imgButtonSalt)
+
+        breadFlourButton.setOnClickListener {
+            bowl.addWeight(Ingredient.BREADFLOUR, 10)
+            updateScale()
+        }
+        wheatFlourButton.setOnClickListener {
+            bowl.addWeight(Ingredient.WHEATFLOUR, 10)
+            updateScale()
+        }
+        yeastButton.setOnClickListener {
+            bowl.addWeight(Ingredient.YEAST, 1)
+            updateScale()
+        }
+        waterButton.setOnClickListener {
+            bowl.addWeight(Ingredient.WATER, 10)
+            updateScale()
+        }
+        saltButton.setOnClickListener {
+            bowl.addWeight(Ingredient.SALT, 1)
+            updateScale()
+        }
 
     }
 }

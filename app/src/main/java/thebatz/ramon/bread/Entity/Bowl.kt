@@ -1,6 +1,7 @@
 package thebatz.ramon.bread.Entity
 
 class Bowl(baseWeight:Int, allowedIngredients:Array<Ingredient>) {
+    var totalWeight = 0
     val baseWeight:Int = baseWeight
     val allowedIngredients:Array<Ingredient> = allowedIngredients
     var breadFlourWeight:Int = 0
@@ -25,6 +26,8 @@ class Bowl(baseWeight:Int, allowedIngredients:Array<Ingredient>) {
         else if(ing == Ingredient.WATER) {
             waterWeight += weight
         }
+
+        totalWeight += weight
     }
 
     fun getWeightString(ing:Ingredient):String {
@@ -46,5 +49,14 @@ class Bowl(baseWeight:Int, allowedIngredients:Array<Ingredient>) {
         }
 
         return "$w grams ${ing.displayName}"
+    }
+
+    fun resetBowl() {
+        breadFlourWeight = 0
+        wheatFlourWeight = 0
+        saltWeight = 0
+        yeastWeight = 0
+        waterWeight = 0
+        totalWeight = 0
     }
 }
