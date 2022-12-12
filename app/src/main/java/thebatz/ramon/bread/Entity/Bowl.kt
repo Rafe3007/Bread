@@ -59,4 +59,25 @@ class Bowl(baseWeight:Int, allowedIngredients:Array<Ingredient>) {
         waterWeight = 0
         totalWeight = 0
     }
+
+    fun getBowlData():HashMap<Ingredient, Int> {
+        val bowlData = hashMapOf<Ingredient, Int>()
+        if(breadFlourWeight > 0) {
+            bowlData.put(Ingredient.BREADFLOUR, breadFlourWeight)
+        }
+        if(wheatFlourWeight > 0) {
+            bowlData.put(Ingredient.WHEATFLOUR, wheatFlourWeight)
+        }
+        if(saltWeight > 0) {
+            bowlData.put(Ingredient.SALT, saltWeight)
+        }
+        if(yeastWeight > 0) {
+            bowlData.put(Ingredient.YEAST, yeastWeight)
+        }
+        if(waterWeight > 0) {
+            bowlData.put(Ingredient.WATER, waterWeight)
+        }
+
+        return bowlData
+    }
 }
