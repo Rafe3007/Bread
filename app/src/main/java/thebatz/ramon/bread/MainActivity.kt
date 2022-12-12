@@ -16,7 +16,6 @@ import thebatz.ramon.bread.Entity.Ingredient
 
 class MainActivity : AppCompatActivity() {
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -58,8 +57,6 @@ class MainActivity : AppCompatActivity() {
             totalScale.text = "${bowl.totalWeight} grams"
         }
         updateScale() // Initial update
-
-        val mixIngredientButton = findViewById<Button>(R.id.mixIngredientButton) // TODO check if bread is good
 
         val resetBowlButton = findViewById<Button>(R.id.resetBowlButton)
         resetBowlButton.setOnClickListener {
@@ -111,7 +108,7 @@ class MainActivity : AppCompatActivity() {
         )
         val wheatLoaf = BreadType("Wheat Loaf", wheatLoafIngredients, wheatLoafWeight)
         val wheatIngredientsLayout = findViewById<LinearLayout>(R.id.recipeWheatLayout)
-        for(i in 0..wheatIngredientsLayout.childCount-1) {
+        for(i in 0 until wheatIngredientsLayout.childCount) {
             val v = wheatIngredientsLayout[i]
             val tv = findViewById<TextView>(v.id)
             tv.text = "${wheatLoaf.weights[i].toString()} g of ${wheatLoaf.ingredients[i].displayName}"
@@ -143,6 +140,31 @@ class MainActivity : AppCompatActivity() {
         saltButton.setOnClickListener {
             bowl.addWeight(Ingredient.SALT, 1)
             updateScale()
+        }
+
+    //-----======[Game Logic]======-----
+        // Plan to randomize and add higher quantities of breads to make
+        // For now, game is testing if one of the two breads are made
+        // if bread is made -> Game Over
+
+        var gameEnd = false
+
+        // Needed Game Views
+        val gameText = findViewById<TextView>(R.id.gameText)
+        val mixingButton = findViewById<Button>(R.id.mixIngredientButton)
+
+        val randBread = (1..2).random()
+        if(randBread == 1) {
+            val breadObjective:BreadType = whiteLoaf
+            gameText.text = "Make a ${whiteLoaf.name}"
+        }
+        else if (randBread == 2) {
+            val breadObjective:BreadType = wheatLoaf
+            gameText.text = "Make a ${wheatLoaf.name}"
+        }
+
+        mixingButton.setOnClickListener {
+            // TODO 
         }
 
     }
