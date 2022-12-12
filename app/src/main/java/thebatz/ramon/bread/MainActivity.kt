@@ -15,19 +15,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val mixingBowlButton = findViewById<ImageButton>(R.id.MixingBowlButton)
-
         // Layouts
         val bowlContentView = findViewById<ConstraintLayout>(R.id.BowlContentLayout)
+        val recipeBook = findViewById<ConstraintLayout>(R.id.RecipeLayout)
         bowlContentView.visibility = GONE
+        recipeBook.visibility = GONE
 
+        // Mixing Bowl
+        val mixingBowlButton = findViewById<ImageButton>(R.id.MixingBowlButton)
         val BC_BackButton = findViewById<Button>(R.id.BowlContentBackButton)
-
         mixingBowlButton.setOnClickListener {
             bowlContentView.visibility = VISIBLE
         }
         BC_BackButton.setOnClickListener {
             bowlContentView.visibility = GONE
+        }
+
+        // Recipe book
+        val recipeBackButton = findViewById<Button>(R.id.recipeBackButton)
+        val recipeBookButton = findViewById<ImageButton>(R.id.RecipeBookButton)
+        recipeBookButton.setOnClickListener {
+            recipeBook.visibility = VISIBLE
+        }
+        recipeBackButton.setOnClickListener {
+            recipeBook.visibility = GONE
         }
     }
 }

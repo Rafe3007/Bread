@@ -13,4 +13,7 @@
     <string name="bowlTV_title">Bowl Contents</string>
     <string name="BC_bread_flour">Bread Flour</string>
     <string name="bowl_mix_button">Mix Ingredients</string>
+
+    <string name="white_loaf">White Loaf</string>
+    <string name="wheat_loaf">Wheat Loaf</string>
 </resources>
