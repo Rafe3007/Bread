@@ -189,10 +189,11 @@ class MainActivity : AppCompatActivity() {
                 for(entry in breadObjective.breadData) {
                     val bowlWeight = bowlData[entry.key]
                     if(entry.value != bowlWeight) {
+                        gameEnd = false
                         break
                     }
+                    gameEnd = true
                 }
-                gameEnd = true
             }
 
             checkGameEnd()
